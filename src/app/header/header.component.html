@@ -3,12 +3,12 @@
         <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
             <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
           </button>
-        <a routerLink="/" class="navbar-brand">Recipe Book</a>
+        <!-- <a routerLink="/" class="navbar-brand">Recipe Book</a> -->
     </div>
     <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
         <ul class="nav navbar-nav">
-            <li><a href="#" (click)="onSelect('recipe')">Recetas</a></li>
-            <li><a href="#" (click)="onSelect('shopping-list')">Lista de la compra</a></li>
+            <li routerLinkActive="active"><a routerLink="recipes">Recetas</a></li>
+            <li routerLinkActive="active"><a routerLink="shopping-list">Lista de la compra</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown" appDropdown>
